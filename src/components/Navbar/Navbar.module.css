@@ -8,5 +8,6 @@
 }
 
 .item.active {
+    color: blueviolet;
     font-size: large;
 }
