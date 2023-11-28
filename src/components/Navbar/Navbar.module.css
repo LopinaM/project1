@@ -1,0 +1,12 @@
+.nav {
+    grid-area: n;
+    background-color: blanchedalmond;
+}
+
+.item {
+    color: black;
+}
+
+.item.active {
+    font-size: large;
+}
