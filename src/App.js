@@ -7,21 +7,27 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import Friends from './components/Friends/Friends';
 
-function App() {
+function App(props) {
+
   return (
     <div className='app-wrapper'>
       <BrowserRouter >
 
         <Header />
         <Navbar />
+        {/* <Navbar state={props.state.friendsPage.friendsData} /> */}
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="profile" element={<Profile />} />
-            <Route path="dialogs" element={<Dialogs />} />
+            <Route path="profile"
+              element={<Profile state={props.state.profilePage} />} />
+            <Route path="dialogs"
+              element={<Dialogs state={props.state.dialogsPage} />} />
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="friends" element={<Friends state={props.state.friendsPage} />} />
           </Routes>
         </div>
 
