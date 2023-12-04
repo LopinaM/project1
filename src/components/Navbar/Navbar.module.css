@@ -7,7 +7,6 @@
     color: black;
 }
 
-.item.active {
+.active {
     color: blueviolet;
-    font-size: large;
 }

@@ -8,21 +8,8 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 
-
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<Navbar />} >
-//       <Route index element={<Dialogs />} />
-//       <Route path="profile" element={<Profile />} />
-//     </Route>
-//   )
-
-// )
-
 function App() {
   return (
-    // <RouterProvider router={router} />
-
     <div className='app-wrapper'>
       <BrowserRouter >
 
