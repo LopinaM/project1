@@ -24,20 +24,24 @@ function App(props) {
 
             <Route path="profile"
               element={<Profile
-                // profilePage={props.state.profilePage}
-                // dispatch={props.dispatch} 
-                store={props.store} />} />
+              // profilePage={props.state.profilePage}
+              // dispatch={props.dispatch} 
+              // store={props.store} 
+              />} />
 
             <Route path="dialogs"
               element={<DialogsContainer
-                // state={props.state.dialogsPage} 
-                store={props.store} />} />
+              // state={props.state.dialogsPage} 
+              // store={props.store} 
+              />} />
 
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
 
-            <Route path="friends" element={<Friends state={props.state.friendsPage} />} />
+            <Route path="friends" element={<Friends
+            // state={props.state.friendsPage}
+            />} />
           </Routes>
         </div>
 
