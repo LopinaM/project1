@@ -8,6 +8,7 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
 
@@ -23,11 +24,12 @@ function App(props) {
 
             <Route path="profile"
               element={<Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch} />} />
+                // profilePage={props.state.profilePage}
+                // dispatch={props.dispatch} 
+                store={props.store} />} />
 
             <Route path="dialogs"
-              element={<Dialogs
+              element={<DialogsContainer
                 // state={props.state.dialogsPage} 
                 store={props.store} />} />
 
