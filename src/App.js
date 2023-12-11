@@ -1,5 +1,4 @@
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
@@ -7,8 +6,8 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import Friends from './components/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App(props) {
 
@@ -39,8 +38,8 @@ function App(props) {
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
 
-            <Route path="friends" element={<Friends
-            // state={props.state.friendsPage}
+            <Route path="users" element={<UsersContainer
+            // state={props.state.usersPage}
             />} />
           </Routes>
         </div>

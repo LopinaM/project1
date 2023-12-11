@@ -25,7 +25,7 @@ function Navbar(props) {
             </div>
 
             <div className={s.item}>
-                <NavLink to="/friends" className={Data} ><h2>Friends</h2></NavLink>
+                <NavLink to="/users" className={Data} ><h2>Users</h2></NavLink>
             </div>
             <div>
                 {props.friendsData}
