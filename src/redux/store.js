@@ -26,11 +26,11 @@ let store = {
         },
         usersPage: {
             usersData: [
-                { id: 1, name: 'Sasha' },
-                { id: 2, name: 'Kristina' },
-                { id: 3, name: 'Annya' },
-                { id: 4, name: 'Petya' },
-                { id: 5, name: 'Artur' }
+                // { id: 1, name: 'Sasha' },
+                // { id: 2, name: 'Kristina' },
+                // { id: 3, name: 'Annya' },
+                // { id: 4, name: 'Petya' },
+                // { id: 5, name: 'Artur' }
             ]
         }
     },

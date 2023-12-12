@@ -4,11 +4,6 @@ const SET_USERS = 'SET_USERS ';
 
 let initialState = {
     usersData: [
-        { id: 1, followed: false, name: 'Sasha' },
-        { id: 2, followed: false, name: 'Kristina' },
-        { id: 3, followed: true, name: 'Annya' },
-        { id: 4, followed: true, name: 'Petya' },
-        { id: 5, followed: false, name: 'Artur' }
     ]
 }
 
