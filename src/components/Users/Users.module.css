@@ -17,3 +17,8 @@
     border-radius: 3em;
     margin: 10px;
 }
+
+
+.selectedPage {
+    font-weight: bold;
+}
