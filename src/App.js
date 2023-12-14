@@ -1,5 +1,4 @@
 import './App.css';
-import Header from './components/Header/Header';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
 import Settings from './components/Settings/Settings';
@@ -8,6 +7,7 @@ import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, crea
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
 
@@ -15,32 +15,21 @@ function App(props) {
     <div className='app-wrapper'>
       <BrowserRouter >
 
-        <Header />
+        <HeaderContainer />
         <Navbar />
         {/* <Navbar state={props.state.friendsPage.friendsData} /> */}
         <div className='app-wrapper-content'>
           <Routes>
 
-            <Route path='/profile/:userId?'
-              element={<ProfileContainer
-              // profilePage={props.state.profilePage}
-              // dispatch={props.dispatch} 
-              // store={props.store} 
-              />} />
+            <Route path='/profile/:userId?' element={<ProfileContainer />} />
 
-            <Route path="dialogs"
-              element={<DialogsContainer
-              // state={props.state.dialogsPage} 
-              // store={props.store} 
-              />} />
+            <Route path="dialogs" element={<DialogsContainer />} />
 
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
             <Route path="settings" element={<Settings />} />
 
-            <Route path="users" element={<UsersContainer
-            // state={props.state.usersPage}
-            />} />
+            <Route path="users" element={<UsersContainer />} />
           </Routes>
         </div>
 
