@@ -2,12 +2,12 @@ import './App.css';
 import Header from './components/Header/Header';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 function App(props) {
 
@@ -21,8 +21,8 @@ function App(props) {
         <div className='app-wrapper-content'>
           <Routes>
 
-            <Route path="profile"
-              element={<Profile
+            <Route path='/profile/:userId?'
+              element={<ProfileContainer
               // profilePage={props.state.profilePage}
               // dispatch={props.dispatch} 
               // store={props.store} 
