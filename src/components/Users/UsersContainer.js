@@ -5,6 +5,7 @@ import axios from 'axios';
 import Users from "./Users";
 import Preloader from '../common/Preloader/Preloader';
 import { userAPI } from '../../api/api';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 
 class UsersContainer extends React.Component {
@@ -32,6 +33,8 @@ class UsersContainer extends React.Component {
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(UsersContainer);
+
 let mapStateToProps = (state) => {
     return {
         users: state.usersPage.usersData,
@@ -44,4 +47,4 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,
-    { follow, unfollow, setCurrentPage, getUsers })(UsersContainer);
+    { follow, unfollow, setCurrentPage, getUsers })(AuthRedirectComponent);
