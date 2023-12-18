@@ -4,6 +4,8 @@ import DialogItem from './DialogItem/DialogItem';
 import MessageItem from './Message/MessageItem';
 import React from 'react';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/dialogs-reducer';
+import { Redirect } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
 function Dialogs(props) {
     debugger;
@@ -20,7 +22,7 @@ function Dialogs(props) {
     let onSendMessageClick = () => {
         props.sendMessage();
     }
-
+    // if (!props.isAuth) return <Navigate to="/login" replace={true} />
 
     return (
         <div className={s.dialogs}>
