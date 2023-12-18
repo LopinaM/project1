@@ -5,6 +5,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { setUserProfile } from '../../redux/profile-reducer';
 import { getUserProfile } from "../../redux/profile-reducer";
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 
 export function withRouter(Children) {
@@ -34,15 +35,16 @@ class ProfileContainer extends React.Component {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
-
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile
 });
 
-let WithUrlDataContainerComponent = withRouter(AuthRedirectComponent);
+export default compose(
+    connect(mapStateToProps, { getUserProfile }),
+    withRouter,
+    withAuthRedirect
+)(ProfileContainer);
 
-export default connect(mapStateToProps, { getUserProfile })(WithUrlDataContainerComponent);
 
 
