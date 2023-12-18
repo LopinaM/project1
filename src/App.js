@@ -10,7 +10,7 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
-
+  debugger
   return (
     <div className='app-wrapper'>
       <BrowserRouter >
@@ -21,6 +21,10 @@ function App(props) {
         <div className='app-wrapper-content'>
           <Routes>
 
+            {/* <Route path="/profile" element={<ProfileContainer />}>
+              <Route path=":userId" element={<ProfileContainer />} />
+            </Route> */}
+
             <Route path='/profile/:userId?' element={<ProfileContainer />} />
 
             <Route path="dialogs" element={<DialogsContainer />} />
@@ -30,6 +34,7 @@ function App(props) {
             <Route path="settings" element={<Settings />} />
 
             <Route path="users" element={<UsersContainer />} />
+
           </Routes>
         </div>
 

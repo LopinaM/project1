@@ -5,7 +5,6 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 
 
 function MyPosts(props) {
-    debugger;
 
     let postsElement =
         props.postData.map(post => <Post message={post.message} likesCount={post.likesCount} />);
