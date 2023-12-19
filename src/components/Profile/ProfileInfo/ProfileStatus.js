@@ -1,6 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ProfileStatus = (props) => {
     const [moodEdit, setMoodEdit] = useState(false);
@@ -13,6 +13,16 @@ const ProfileStatus = (props) => {
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value);
     };
+
+    //?
+    useEffect(() => {
+
+        if (!status) {
+            setStatus(status);
+        }
+        // console.log("componentDidUpdate")
+    });
+
 
     return (
         <div>
