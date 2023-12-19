@@ -12,7 +12,7 @@ import Login from './components/Login/Login';
 
 
 function App(props) {
-  debugger
+
   return (
     <div className='app-wrapper'>
       <BrowserRouter >

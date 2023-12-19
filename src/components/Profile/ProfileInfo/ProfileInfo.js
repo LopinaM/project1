@@ -22,7 +22,7 @@ function ProfileInfo(props) {
                 <div>
                     {props.profile.aboutMe}
                 </div>
-                <ProfileStatus status={"Hello"} />
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
             </div>
         </div>
     )
