@@ -19,10 +19,6 @@ export const userAPI = {
     },
     unfollow(userId) {
         return instance.delete(`follow/${userId}`)
-    },
-    getProfile(userId) {
-        console.log('worning');
-        return profileAPI.getProfile(userId);
     }
 }
 
