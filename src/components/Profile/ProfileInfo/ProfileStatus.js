@@ -1,46 +1,44 @@
-import Preloader from '../../common/Preloader/Preloader';
-import s from './ProfileInfo.module.css';
 import React, { useEffect, useState } from 'react';
 
 const ProfileStatus = (props) => {
     const [moodEdit, setMoodEdit] = useState(false);
     const [status, setStatus] = useState(props.status);
 
-    const editStatus = () => {
-        setMoodEdit(!moodEdit);
-    };
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
+
+    const activateEditMode = () => {
+        setMoodEdit(true);
+    }
+
+    const deactivateEditMode = () => {
+        setMoodEdit(false);
+        props.updateStatus(status);
+    }
 
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value);
     };
-
-    //?
-    useEffect(() => {
-
-        if (!status) {
-            setStatus(status);
-        }
-        // console.log("componentDidUpdate")
-    });
-
 
     return (
         <div>
             {moodEdit
                 ? (
                     <div>
-                        <input onChange={onStatusChange} autoFocus onBlur={editStatus} value={status} />
+                        <input onChange={onStatusChange} autoFocus onBlur={deactivateEditMode} value={status} />
                     </div>
                 )
                 : (
                     <div>
-                        <span onDoubleClick={editStatus}>{status || "-------"}</span>
+                        <span onDoubleClick={activateEditMode}>{status || "-------"}</span>
                     </div>
                 )
             }
         </div>
     );
-
 };
 
 export default ProfileStatus;
+
+
