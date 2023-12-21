@@ -5,7 +5,7 @@ import axios from 'axios';
 import Users from "./Users";
 import Preloader from '../common/Preloader/Preloader';
 import { userAPI } from '../../api/api';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+// import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
 
 
@@ -47,5 +47,5 @@ let mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps, { follow, unfollow, setCurrentPage, getUsers }),
-    withAuthRedirect
+    // withAuthRedirect
 )(UsersContainer);
