@@ -5,6 +5,8 @@ import { Field, reduxForm } from "redux-form";
 import AddPostForm from './AddPostForm/AddPostForm';
 
 function MyPosts(props) {
+    // const MyPosts = React.memo(props => {
+    console.log("RENDER YO");
 
     let postsElement =
         props.postData.map(post => <Post message={post.message} likesCount={post.likesCount} />);
@@ -13,7 +15,6 @@ function MyPosts(props) {
     let onAddPost = (values) => {
         props.addPost(values.newPostText);
     }
-
 
     return (
         <div className={s.postsBlock}>
@@ -25,22 +26,7 @@ function MyPosts(props) {
         </div>
     )
 }
-
-
-// const AddNewPostForm = (props) => {
-//     return (
-//         <form onSubmit={props.handleSubmit}>
-//             <Field component="textarea" name="newPostText" placeholder='samuraiJs'
-//             // validate={[required, maxLength50]} 
-//             />
-//             <div>
-//                 <button >Add Post</button>
-//             </div>
-//         </form>
-//     )
-// }
-
-// const AddNewPostFormRedux = reduxForm({ form: "ProfileAddNewPostForm" })(AddNewPostForm);
+// );
 
 export default MyPosts;
 
