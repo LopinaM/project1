@@ -2,8 +2,8 @@ import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus';
 
-function ProfileInfo(props) {
-    if (!props.profile) {
+function ProfileInfo({ profile, status, updateStatus }) {
+    if (!profile) {
         return <Preloader />
     }
 
@@ -14,15 +14,15 @@ function ProfileInfo(props) {
             </div> */}
             <div className={s.descriphionBlock}>
                 <div>
-                    <img src={props.profile.photos.large} />
+                    <img src={profile.photos.large} />
                 </div>
                 <div className={s.descriphionBlock2}>
-                    {props.profile.fullName}
+                    {profile.fullName}
                 </div>
                 <div>
-                    {props.profile.aboutMe}
+                    {profile.aboutMe}
                 </div>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+                <ProfileStatus status={status} updateStatus={updateStatus} />
             </div>
         </div>
     )

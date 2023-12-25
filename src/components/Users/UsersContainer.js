@@ -12,11 +12,13 @@ import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetchin
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        const { currentPage, pageSize } = this.props;
+        this.props.getUsers(currentPage, pageSize);
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.getUsers(pageNumber, this.props.pageSize);
+        const { pageSize } = this.props;
+        this.props.getUsers(pageNumber, pageSize);
     }
 
     render() {
@@ -35,18 +37,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.usersPage.usersData,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         currentPage: state.usersPage.currentPage,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress: state.usersPage.followingInProgress
-//     }
-// }
-
-
 let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -62,3 +52,4 @@ export default compose(
     connect(mapStateToProps, { follow, unfollow, setCurrentPage, getUsers: requestUsers }),
     // withAuthRedirect
 )(UsersContainer);
+
