@@ -5,9 +5,9 @@ import Navbar from './components/Navbar/Navbar';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements, withRouter } from 'react-router-dom';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
+// import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
+// import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import { compose } from 'redux';
@@ -15,6 +15,16 @@ import { connect, Provider } from 'react-redux';
 import Preloader from './components/common/Preloader/Preloader';
 import { initializeApp } from "./redux/app-reducer";
 import store from './redux/redux-store';
+
+
+import { withSuspense } from "./hoc/withSuspense";
+
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+
+
+const DialogContainerWithSuspense = withSuspense(DialogsContainer)
+const ProfileContainerWithSuspense = withSuspense(ProfileContainer)
 
 
 class App extends React.Component {
@@ -42,9 +52,9 @@ class App extends React.Component {
               <Route path=":userId" element={<ProfileContainer />} />
             </Route> */}
 
-            <Route path='/profile/:userId?' element={<ProfileContainer />} />
+            <Route path='/profile/:userId?' element={<ProfileContainerWithSuspense />} />
 
-            <Route path="dialogs" element={<DialogsContainer />} />
+            <Route path="dialogs" element={<DialogContainerWithSuspense />} />
 
             <Route path="news" element={<News />} />
             <Route path="music" element={<Music />} />
