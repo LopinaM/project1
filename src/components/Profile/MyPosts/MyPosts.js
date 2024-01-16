@@ -9,7 +9,7 @@ function MyPosts(props) {
     console.log("RENDER YO");
 
     let postsElement =
-        props.postData.map(post => <Post message={post.message} likesCount={post.likesCount} />);
+        props.postData.map(post => <Post key={post.id} message={post.message} likesCount={post.likesCount} />);
 
 
     let onAddPost = (values) => {
