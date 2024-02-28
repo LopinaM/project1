@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { follow, setCurrentPage, unfollow, requestUsers } from '../../redux/users-reducer';
-import axios from 'axios';
 import Users from "./Users";
 import Preloader from '../common/Preloader/Preloader';
-import { userAPI } from '../../api/api';
 // import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
 import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingInProgress } from '../../redux/users-selectors';
@@ -36,6 +34,7 @@ class UsersContainer extends React.Component {
         </>
     }
 }
+
 
 let mapStateToProps = (state) => {
     return {

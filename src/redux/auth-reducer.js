@@ -53,7 +53,7 @@ export const login = (email, password, rememberMe, captcha) => async (dispatch) 
         }
 
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
-        dispatch(stopSubmit("login", { _error: message }));
+        dispatch(stopSubmit("loginForm", { _error: message }));
     }
 }
 
@@ -72,3 +72,4 @@ export const logout = () => async (dispatch) => {
 }
 
 export default authReducer;
+

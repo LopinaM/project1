@@ -1,5 +1,5 @@
 export const getUsers = (state) => {
-    return state.usersPage.usersData;
+    return state.usersPage.users;
 }
 
 export const getPageSize = (state) => {
