@@ -1,3 +1,13 @@
+export type DialogType = {
+    id: number;
+    name: string;
+};
+  
+export type MessageType = {
+    id: number;
+    message: string;
+};
+
 export type PostType = {
     id: number;
     message: string;
@@ -36,3 +46,12 @@ export type UserType={
     photos: PhotoesType
     followed: boolean
 }
+
+export type UserReducerType = {
+    currentPage: number;
+    pageSize: number;
+    isFetching: boolean;
+    totalUsersCount: number;
+    users: Array<UserType>;
+    followingInProgress: Array<number>;
+  };
